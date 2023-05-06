@@ -6,15 +6,18 @@ jobs:
   mypy:
     runs-on:            ubuntu-latest
     name:               Mypy
+    strategy:
+      matrix:
+        python-version:      [3.7, 3.8, 3.9, '3.10', '3.11']
     steps:
     - uses:             actions/checkout@v3
-    - name:             Set up Python 3.7
+    - name:             Set up Python ${{ matrix.python-version }}
       uses:             actions/setup-python@v4
       with:
-        python-version: 3.7
+        python-version: ${{ matrix.python-version }}
     - name:             Install Dependencies
       run:              |
         pip install mypy
-    - name:             mypy
+    - name:             mypy ${{ matrix.python-version }}
       run:              |
         mypy --install-types --non-interactive src/
