@@ -60,7 +60,7 @@ relative_files = true
 
 [tool.coverage.report]
 ignore_errors = true
-omit = ["*.pyc", "*.pyo", "_version.py"]
+omit = ["*.pyc", "*.pyo", "src/import_wrappers/_version.py"]
 # Regexes for lines to exclude from consideration
 exclude_lines = [
     # Have to re-enable the standard pragma
