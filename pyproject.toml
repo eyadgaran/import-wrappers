@@ -83,6 +83,7 @@ exclude_lines = [
     "deprecated_warning",
     "in_development_warning",
     "__author__",
+    "__version__",
 ]
 
 
