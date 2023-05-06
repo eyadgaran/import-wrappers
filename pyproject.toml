@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "import-wrappers"
+authors = [
+    {name = "Elisha Yadgaran", email = "ElishaY@alum.mit.edu"},
+]
+readme = "README.md"
+description = "Handy import wrappers to simplify optional dependency management"
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+dependencies = [
+]
+dynamic = ["version"]
+
+
+[tool.setuptools_scm]
+write_to = "src/import_wrappers/_version.py"
+write_to_template = '__version__ = "{version}"'
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "isort",
+    "black",
+    "flake8",
+    "mypy",
+]
+
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-report term-missing --cov-fail-under 95"
+testpaths = [
+    "tests"
+]
+
+[tool.isort]
+profile = "black"
+
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+relative_files = true
+
+
+[tool.coverage.report]
+ignore_errors = true
+omit = ["*.pyc", "*.pyo", "_version.py"]
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "def __str__",
+    "if self.debug",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "__all__",
+    "import",
+    "deprecated_warning",
+    "in_development_warning",
+    "__author__",
+]
+
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = false
+warn_unused_configs = true
+check_untyped_defs = true
+follow_imports = "silent"
+ignore_missing_imports = true
