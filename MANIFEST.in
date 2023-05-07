@@ -1,0 +1,11 @@
+# Non python files to include in installed binary
+
+# Top level files
+include LICENSE
+include README.md
+prune tests/
+prune .*/
+
+# Exclude all the compiled files
+global-exclude *.py[cod]
+global-exclude .*

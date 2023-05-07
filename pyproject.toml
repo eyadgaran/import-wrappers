@@ -9,6 +9,7 @@ authors = [
     {name = "Elisha Yadgaran", email = "ElishaY@alum.mit.edu"},
 ]
 readme = "README.md"
+license = {file = "LICENSE"}
 description = "Handy import wrappers to simplify optional dependency management"
 requires-python = ">=3.7"
 classifiers = [
@@ -24,6 +25,14 @@ classifiers = [
 dependencies = [
 ]
 dynamic = ["version"]
+
+[tool.setuptools]
+include-package-data = true
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
 
 
 [tool.setuptools_scm]
