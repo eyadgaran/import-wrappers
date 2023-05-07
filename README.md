@@ -1,5 +1,7 @@
 [![PyPI version](https://badge.fury.io/py/import-wrappers.svg)](https://badge.fury.io/py/import-wrappers)
 ![PyPI pyversions](https://img.shields.io/pypi/pyversions/import-wrappers.svg)
+[![Coverage Status](https://coveralls.io/repos/github/eyadgaran/import-wrappers/badge.svg)](https://coveralls.io/github/eyadgaran/import-wrappers)
+![Build Status](https://github.com/eyadgaran/import-wrappers/actions/workflows/test.yml/badge.svg?branch=main)
 
 # Import Wrappers
 A simple set of utilities to make working with various import patterns easy.
