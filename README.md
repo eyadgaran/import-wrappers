@@ -9,7 +9,7 @@ A simple set of utilities to make working with various import patterns easy.
 ```pip install import-wrappers```
 
 # Optional Dependencies
-The original motiviation for this library was the repetitive utilities I found myself authoring to
+The original motivation for this library was the repetitive utilities I found myself authoring to
 hack around supporting optional dependencies in other projects. Optional dependencies are a common
 pattern where the core of a library does not depend on a dependency but some functionality may
 require it. Most users may never interact with the code that requires the optional dependency but
