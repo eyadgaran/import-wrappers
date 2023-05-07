@@ -38,8 +38,7 @@ class TestMissingDependencyWithMetaclass(object):
     """
 
     @pytest.fixture
-    @staticmethod
-    def mock_dependency():
+    def mock_dependency(self):
         return types.new_class(
             name="test",
             bases=(MissingDependency,),
