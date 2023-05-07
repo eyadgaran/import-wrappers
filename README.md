@@ -23,6 +23,7 @@ Typical import pattern - this fails on import whether or not the dependency is u
 ```python
 from optional_dependency import SomeUnusedClass
 
+
 def some_function_that_isnt_needed(*args, **kwargs):
     return SomeUnusedClass().some_method(*args, **kwargs)
 ```

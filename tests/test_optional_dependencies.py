@@ -1,6 +1,7 @@
 import types
 
 import pytest
+
 from import_wrappers.optional_dependencies import (
     MissingDependency,
     MissingDependencyMeta,
